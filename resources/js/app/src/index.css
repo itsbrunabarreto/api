@@ -1,0 +1,123 @@
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6, p{
+  margin: 0;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 14;
+  color: #212121;
+  background-color: #fafafa;
+}
+
+.btn-add,
+.btn-edit,
+.btn-show,
+.btn-delete{
+  font-family: Arial, Helvetica, sans-serif;
+  outline: 0;
+  background: #780e9c;
+  border: 0;
+  text-decoration: none;
+  padding: 0;
+  color: #ffffff;
+  font-size: 18px;
+  cursor: point;
+}
+
+
+.btn-add,
+.btn-edit,
+.btn-show,
+.btn-delete{
+ padding: 0.5rem 0.75rem;
+ font-size: 14px;
+ border-radius: 4px;
+}
+
+.btn-add{
+  background-color: #00a762;
+}
+
+.btn-delete{
+  background-color: #b62424;
+}
+
+.btn-show{
+  background-color: rgb(59,59,90);
+}
+
+/* estilo para tabela */
+
+table{
+  width: 100%;
+  border-spacing:0 ;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+th,td{
+  padding:10px;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  text-align: left;
+}
+
+tbody tr:hover{
+  background-color: #c9c1c1;
+}
+
+table > thead > td > th{
+  text-align: left;
+  padding: 0.5rem 0.5rem;
+  background-color: #2db732;
+  color: white;
+}
+
+table > thead > tr > th.center {
+  padding: 0.5rem 0.5rem;
+  border-bottom: 1px solid #efefef;
+  text-align: center;
+  vertical-align: middle;
+}
+
+th.actions, td.actions{
+  width: 1%;
+  white-space: nowrap;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.display{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card{
+  width: 70%;
+  max-width: 100%;
+  min-height: 30%;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgb(0, 0, 0, 0.1);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+
