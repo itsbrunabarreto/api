@@ -26,7 +26,7 @@ class UsuarioController extends Controller
 
         $total = $query->count();
 
-        $data = $query->offset( ($page - 1) * $pageSize) //pode user o User::paginate(5);
+        $data = $query->offset( ($page - 1) * $pageSize) //pode usar o User::paginate(5);
                       ->limit($pageSize)
                       ->get();
 
