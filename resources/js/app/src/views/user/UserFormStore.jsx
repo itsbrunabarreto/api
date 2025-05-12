@@ -17,15 +17,21 @@ export default function UserFormStore ()
         e.preventDefault();
         
        axiosClient.post('/user/store', user)
-        .then(({ }) => {
-            setUser({});
-            console.log("Usuário incluido com sucesso");
-            navigate('/user/index');
-        }).catch((error) => {
-            console.log(error);
-        });
-    }
+                  .then(() => {
+                    setUser({
+                    id: null,
+                    name: "",
+                    email: "",
+                    password: ""
+                    });
+                    console.log("Usuário incluído com sucesso");
+                    navigate('/user/index');
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
 
+    }
 
     return(
         <Fragment>

@@ -210,6 +210,21 @@ th.actions, td.actions{
   margin-bottom: 20px;
 }
 
+.p-20 {
+  margin-bottom: 20px;
+}
+
+.login-signup-form .form .message {
+  margin: 15px;
+  color: #b3b3b3;
+  font-size: 16px;
+  text-align: center;
+}
+
+.login-signup-form .form .message a {
+  color: #5b08a7;
+}
+
 /*estilo para o default layout*/
 
 #defaultLayout {
@@ -259,3 +274,4 @@ th.actions, td.actions{
 #defaultLayout main{
   padding: 2rem;
 }
+
