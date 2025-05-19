@@ -1,31 +1,36 @@
-import {createContext, useState} from "react";
+import { createContext, useContext, useState } from "react";
 
 export const LoginContexto = createContext(null);
 
-const ContextProvider = (children) => {
-    
-    const [user, setUser] = useState({});
-    const [token, setToken] = useState(localStorage.getItem('TOKEN'))
+const ContextProvider = ({ children }) => {
+  const [user, setUser] = useState({});
+  const [token, setToken] = useState(localStorage.getItem('TOKEN'));
 
-    const _setToken = (token) => {
+ const _setToken = (token) => {
+  setToken(token);
 
-        setToken(token)
+  if (token) {
+    localStorage.setItem('TOKEN', token);  
+  } else {
+    localStorage.removeItem('TOKEN'); 
+  }
+};
 
-        if(token){
-            localStorage.setItem('TOKEN', token);
-        } else{
-            localStorage.removeItem('TOKEN');
-        }
-    }
-    
-    return(
+  const _setUser = (user) => {
+    setUser(user);
+    localStorage.setItem('USER', user.name); 
+  };
 
-        <LoginContexto.Provider value = {{
-            _setToken,
-        }}>
-            {children}
-        </LoginContexto.Provider>
-    )
-}
+  return (
+    <LoginContexto.Provider value={{ _setToken, _setUser }}>
+      {children}
+    </LoginContexto.Provider>
+  );
+};
 
-export default LoginProvider;
+export default ContextProvider;
+
+export const useLogin = () => {
+  const contexto = useContext(LoginContexto);
+  return contexto;
+};

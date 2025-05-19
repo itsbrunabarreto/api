@@ -31,9 +31,19 @@ class LoginController extends Controller
         $token = $user->createToken('api-token')->plainTextToken;
 
         return response()->json([
-            'user' => $user,
+            'user'=> $user,
             'access_token' => $token,
         ]);
 
+    }
+
+    public function logout(Request $request){
+        $email = $request->email;
+
+        $user = User::where('email', $email)->first();
+
+        $user->tokens()->delete();
+
+        
     }
 }

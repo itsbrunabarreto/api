@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Rotas from './routes/Routes'
-import { LoginContexto } from './context/ContextProvider'
+import ContextProvider from './context/ContextProvider'
 
 function App() {
 
